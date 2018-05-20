@@ -11,5 +11,14 @@
     <input name="link" #newLink>
   </div>
 
-  <button (click)="AddArticle(newTitle, newLink)">Add Article</button>
+  <div>
+    <label for="votes">Votes: </label>
+    <input name="votes" #newVotes>
+  </div>
+
+  <button (click)="AddArticle(newTitle, newLink, newVotes)">Add Article</button>
 </form>
+
+<div *ngFor="let article of SortArticles()" >
+  <app-angular-reddit-article [article]="article"></app-angular-reddit-article>
+</div>

@@ -6,6 +6,7 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AngularRedditComponent } from './angular-reddit/angular-reddit.component';
+import { AngularRedditArticleComponent } from './angular-reddit-article/angular-reddit-article.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { AngularRedditComponent } from './angular-reddit/angular-reddit.componen
     HelloWorldComponent,
     UserItemComponent,
     UserListComponent,
-    AngularRedditComponent
+    AngularRedditComponent,
+    AngularRedditArticleComponent
 ],
   imports: [
     BrowserModule
