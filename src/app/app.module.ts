@@ -7,6 +7,8 @@ import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { AngularRedditComponent } from './angular-reddit/angular-reddit.component';
 import { AngularRedditArticleComponent } from './angular-reddit-article/angular-reddit-article.component';
+import { InventoryProductRowComponent } from './inventory-product-row/inventory-product-row.component';
+import { InventoryProductListComponent } from './inventory-product-list/inventory-product-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AngularRedditArticleComponent } from './angular-reddit-article/angular-
     UserItemComponent,
     UserListComponent,
     AngularRedditComponent,
-    AngularRedditArticleComponent
+    AngularRedditArticleComponent,
+    InventoryProductRowComponent,
+    InventoryProductListComponent
 ],
   imports: [
     BrowserModule

@@ -16,7 +16,7 @@
     <input name="votes" #newVotes>
   </div>
 
-  <button (click)="AddArticle(newTitle, newLink, newVotes)">Add Article</button>
+  <button (click)="AddArticle(newTitle, newLink, newVotes)" class="btn btn-success">Add Article</button>
 </form>
 
 <div *ngFor="let article of SortArticles()" >
