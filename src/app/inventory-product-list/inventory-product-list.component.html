@@ -1,4 +1,4 @@
 <app-inventory-product-row *ngFor="let prod of products"
                           [product]="prod"
-                          (click)="clicked(prod)"> <!-- output -->
+                          (productSelected)="parentFunctionCalled($event)"> <!-- output -->
                           </app-inventory-product-row>

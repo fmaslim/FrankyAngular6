@@ -10,7 +10,7 @@ export class InventoryProductListComponent implements OnInit {
 
   products: Product[];
 
-  @Output() productSelected: EventEmitter<Product>;
+  // @Output() productSelected: EventEmitter<Product>;
 
   constructor() {
     this.products = [
@@ -31,15 +31,19 @@ export class InventoryProductListComponent implements OnInit {
       34.99)
     ];
 
-    this.productSelected = new EventEmitter<Product>();
+    // this.productSelected = new EventEmitter<Product>();
   }
 
   ngOnInit() {
   }
 
-  clicked(product: Product) {
-    // console.log('Item is clicked', product);
-    this.productSelected.emit(product);
-    console.log(product);
+  // clicked(product: Product) {
+  //   console.log('Item is clicked', product);
+  //   this.productSelected.emit(product);
+  //   console.log(product);
+  // }
+
+  parentFunctionCalled(product: Product) {
+    console.log('Parent function called. The emitted object is: ', product);
   }
 }

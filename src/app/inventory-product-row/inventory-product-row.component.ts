@@ -18,7 +18,7 @@ export class Product {
 export class InventoryProductRowComponent implements OnInit {
 
   @Input() product: Product;
-  // @Output() productSelected: EventEmitter<Product>;
+  @Output() productSelected: EventEmitter<Product>;
 
   constructor() {
     // if (this.product === undefined) {
@@ -33,9 +33,13 @@ export class InventoryProductRowComponent implements OnInit {
 
     // console.log('product now has a value');
 
-    // this.productSelected = new EventEmitter<Product>();
+    this.productSelected = new EventEmitter<Product>();
   }
 
   ngOnInit() {
+  }
+
+  childEvent_OnClick(product: Product) {
+    this.productSelected.emit(product);
   }
 }
