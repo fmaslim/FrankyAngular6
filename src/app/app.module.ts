@@ -12,6 +12,7 @@ import { AngularRedditArticleComponent } from './angular-reddit-article/angular-
 import { InventoryProductRowComponent } from './inventory-product-row/inventory-product-row.component';
 import { InventoryProductListComponent } from './inventory-product-list/inventory-product-list.component';
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
+import { PriceServiceDemoComponent } from './price-service-demo/price-service-demo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
     AngularRedditArticleComponent,
     InventoryProductRowComponent,
     InventoryProductListComponent,
-    DemoFormSkuComponent
+    DemoFormSkuComponent,
+    PriceServiceDemoComponent
 ],
   imports: [
     BrowserModule,

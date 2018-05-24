@@ -25,7 +25,7 @@ export class DemoFormSkuComponent implements OnInit {
 
     this.myForm.valueChanges.subscribe((form: any) => {
       console.log('form changed to: ', form);
-    })
+    });
   }
 
   ngOnInit() {
