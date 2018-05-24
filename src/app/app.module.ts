@@ -13,6 +13,7 @@ import { InventoryProductRowComponent } from './inventory-product-row/inventory-
 import { InventoryProductListComponent } from './inventory-product-list/inventory-product-list.component';
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { PriceServiceDemoComponent } from './price-service-demo/price-service-demo.component';
+import { YoutubeSearchComponent, YoutubeSearchService, youtubeSearchInjectables } from './youtube-search/youtube-search.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { PriceServiceDemoComponent } from './price-service-demo/price-service-de
     InventoryProductRowComponent,
     InventoryProductListComponent,
     DemoFormSkuComponent,
-    PriceServiceDemoComponent
+    PriceServiceDemoComponent,
+    YoutubeSearchComponent
 ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [youtubeSearchInjectables],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
