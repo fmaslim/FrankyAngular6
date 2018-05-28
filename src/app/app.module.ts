@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Routes, RouterModule, Router } from '@angular/router';
+import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
@@ -14,6 +17,24 @@ import { InventoryProductListComponent } from './inventory-product-list/inventor
 import { DemoFormSkuComponent } from './demo-form-sku/demo-form-sku.component';
 import { PriceServiceDemoComponent } from './price-service-demo/price-service-demo.component';
 import { YoutubeSearchComponent, YoutubeSearchService, youtubeSearchInjectables } from './youtube-search/youtube-search.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HelloWorldComponent },
+    { path: 'angular', component: AngularRedditComponent },
+    { path: 'angulararticle', component: AngularRedditArticleComponent },
+    { path: 'sku', component: DemoFormSkuComponent },
+    { path: 'inventorylist', component: InventoryProductListComponent },
+    { path: 'inventoryrow', component: InventoryProductRowComponent },
+    { path: 'price', component: PriceServiceDemoComponent },
+    { path: 'searchbox', component: SearchBoxComponent },
+    { path: 'searchresult', component: SearchResultComponent },
+    { path: 'useritem', component: UserItemComponent },
+    { path: 'userlist', component: UserListComponent },
+    { path: 'youtube', component: YoutubeSearchComponent },
+];
 
 @NgModule({
   declarations: [
@@ -27,14 +48,22 @@ import { YoutubeSearchComponent, YoutubeSearchService, youtubeSearchInjectables 
     InventoryProductListComponent,
     DemoFormSkuComponent,
     PriceServiceDemoComponent,
+    YoutubeSearchComponent,
+    SearchBoxComponent,
+    SearchResultComponent,
     YoutubeSearchComponent
 ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule.forRoot(routes) // routes
   ],
-  providers: [youtubeSearchInjectables],
+  providers: [
+    youtubeSearchInjectables,
+    { provide: APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

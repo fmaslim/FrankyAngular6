@@ -1,1 +1,11 @@
-<app-youtube-search></app-youtube-search>
+<div class="container">
+    <h1>Router Sample</h1>
+    <div class="nav-link">
+        <a [routerLink]="['/home']">Hello World</a>
+        <a [routerLink]="['/angular']">Angular Reddit</a>
+        <a [routerLink]="['/angulararticle']">Angular Article</a>
+        <a [routerLink]="['/sku']">SKU</a>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

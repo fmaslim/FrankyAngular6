@@ -1,13 +1,14 @@
+import { map } from 'rxjs/operators';
 import { Component, OnInit, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/debounceTime';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/switch';
-import 'rxjs/add/observable/fromEvent';
+// import 'rxjs/add/operator/map';
+// import 'rxjs/add/operator/filter';
+// import 'rxjs/add/operator/debounceTime';
+// import 'rxjs/add/operator/do';
+// import 'rxjs/add/operator/switch';
+// import 'rxjs/add/observable/fromEvent';
 
 export class SearchResult {
   id: string;
@@ -45,7 +46,7 @@ export class YoutubeSearchService {
 
     const queryUrl = `${this.apiURL}?${params}`;
 
-    return this.http.get(queryUrl).map((response: any) => {
+    return this.http.get(queryUrl).pipe(map(response => {
       return <any>response['items'].map(item => {
         return new SearchResult({
           id: item.id.videoId,
@@ -54,7 +55,7 @@ export class YoutubeSearchService {
           thumbnailUrl: item.snippet.thumbnails.high.url
         });
       });
-    });
+    }));
   }
 }
 
@@ -71,9 +72,16 @@ export const youtubeSearchInjectables: Array<any> = [
 })
 export class YoutubeSearchComponent implements OnInit {
 
+  results: SearchResult[];
+  loading: boolean;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  updateResults(results: SearchResult[]) {
+    this.results = results;
   }
 
 }
