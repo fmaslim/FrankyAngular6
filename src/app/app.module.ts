@@ -19,6 +19,10 @@ import { PriceServiceDemoComponent } from './price-service-demo/price-service-de
 import { YoutubeSearchComponent, YoutubeSearchService, youtubeSearchInjectables } from './youtube-search/youtube-search.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { SearchResultComponent } from './search-result/search-result.component';
+import { SpotifyArtistComponent } from './spotify-artist/spotify-artist.component';
+import { SpotifyAlbumComponent } from './spotify-album/spotify-album.component';
+import { SpotifySearchComponent, SpotifyService } from './spotify-search/spotify-search.component';
+import { SpotifyTrackComponent } from './spotify-track/spotify-track.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,6 +38,7 @@ const routes: Routes = [
     { path: 'useritem', component: UserItemComponent },
     { path: 'userlist', component: UserListComponent },
     { path: 'youtube', component: YoutubeSearchComponent },
+    { path: 'spotifysearch', component: SpotifySearchComponent },
 ];
 
 @NgModule({
@@ -51,7 +56,11 @@ const routes: Routes = [
     YoutubeSearchComponent,
     SearchBoxComponent,
     SearchResultComponent,
-    YoutubeSearchComponent
+    YoutubeSearchComponent,
+    SpotifyArtistComponent,
+    SpotifyAlbumComponent,
+    SpotifySearchComponent,
+    SpotifyTrackComponent
 ],
   imports: [
     BrowserModule,
@@ -62,6 +71,7 @@ const routes: Routes = [
   ],
   providers: [
     youtubeSearchInjectables,
+    SpotifyService,
     { provide: APP_BASE_HREF, useValue: '/' }
   ],
   bootstrap: [AppComponent]
